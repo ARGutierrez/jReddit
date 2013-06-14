@@ -1,6 +1,6 @@
-import com.omrlnr.jreddit.submissions.Submission;
-import com.omrlnr.jreddit.submissions.Submissions;
-import com.omrlnr.jreddit.user.User;
+import com.omrlnr.jreddit.Submission;
+import com.omrlnr.jreddit.Submissions;
+import com.omrlnr.jreddit.User;
 
 import com.omrlnr.jreddit.utils.Utils;
 
@@ -14,8 +14,6 @@ public final class GenerousBot {
 		String[] subreddits = { "programming", "funny", "wtf", "java",
 				"todayilearned", "redditdev" };
 
-		Utils.setUserAgent("Generous-Bot");
-
 		User user = new User("username", "password");
 		user.connect();
 
@@ -23,7 +21,10 @@ public final class GenerousBot {
 			for (Submission submission : Submissions
 					.getSubmissions(subreddits[i], Submissions.NEW,
 							Submissions.FRONTPAGE, user)) {
-				submission.upVote();
+                // 
+                // TODO fix this
+                //
+				// submission.upVote();
 			}
 		}
 	}
